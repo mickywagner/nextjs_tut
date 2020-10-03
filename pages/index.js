@@ -46,3 +46,26 @@ export async function getStaticProps() {
     }
   }
 }
+
+// // for server side rendering
+// export async function getServerSideProps(context) {
+//   return {
+//     props: {
+//       // props for your component
+//     }
+//   }
+// }
+
+// For Odin Book use client side rendering -- statically generate parts that don't
+// require external data. Once page loads, fetch exteranl data using javascript 
+// top populate remaining parts  -- use SWR 
+
+// import useSWR from 'swr'
+
+// function Profile() {
+//   const { data, error } = useSWR('/api/user', fetch)
+
+//   if (error) return <div>failed to load</div>
+//   if (!data) return <div>loading...</div>
+//   return <div>hello {data.name}!</div>
+// }  https://swr.vercel.app/
